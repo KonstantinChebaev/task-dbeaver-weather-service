@@ -18,9 +18,8 @@ public class WeatherController {
     @Autowired
     private WeatherService weatherService;
 
-    @GetMapping("/get")
+    @GetMapping("/weather")
     public ResponseEntity<WeatherDto> getTodayWeather() {
-        System.out.println("?? ???? ????? ???????");
         Optional<WeatherEntity> weatherEntity = weatherService.getTodayWeather();
         return weatherEntity.map(entity -> ResponseEntity.ok(new WeatherDto(entity.getWeather())))
                 .orElseGet(() -> ResponseEntity.notFound().build());

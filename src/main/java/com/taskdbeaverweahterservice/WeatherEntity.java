@@ -21,5 +21,4 @@ public class WeatherEntity {
 
     @Column(name = "weather_value")
     private String weather;
-
 }

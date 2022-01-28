@@ -1,6 +1,6 @@
 package com.taskdbeaverweahterservice;
 
-import com.taskdbeaverweahterservice.repository.WeatherRepository;
+import com.taskdbeaverweahterservice.service.WeatherService;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,5 +8,5 @@ import org.springframework.context.annotation.Configuration;
 public class TestContextConfiguration {
 
     @MockBean
-    public WeatherRepository weatherRepository;
+    public WeatherService weatherService;
 }

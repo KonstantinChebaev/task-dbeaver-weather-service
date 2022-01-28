@@ -59,7 +59,10 @@ public class WeatherServiceImpl implements WeatherService {
             if(index == -1) {
                 return Optional.empty();
             }
-            return Optional.of(content.substring(index + 27, index + 30));
+            if(Character.isDigit(content.charAt(index + DIV_WEATHER_TEMP.length()+3))){
+                return Optional.of(content.substring(index + DIV_WEATHER_TEMP.length(), index + DIV_WEATHER_TEMP.length()+3));
+            }
+            return Optional.of(content.substring(index + DIV_WEATHER_TEMP.length(), index + DIV_WEATHER_TEMP.length()+2));
         }
     }
 }
